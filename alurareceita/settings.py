@@ -80,10 +80,15 @@ WSGI_APPLICATION = 'alurareceita.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dfa2hblogep4gq',
+        'USER': 'tqukakwehsoads',
+        'PASSWORD': '171fe4d06d5d17fc935cadf312a41bfc901a81810df43fb0193f99088a614dc4',
+        'HOST': 'ec2-44-193-178-122.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
