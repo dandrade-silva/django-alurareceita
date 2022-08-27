@@ -8,24 +8,9 @@
         <img src="{% static 'img/core-img/pizza.png' %}" alt="">
     </div>
 
-    <!-- Search Wrapper -->
-    <div class="search-wrapper">
-        <!-- Close Btn -->
-        <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+    {% include 'partials/_busca.html' %}
 
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <form action="#" method="post">
-                        <input type="search" name="search" placeholder="O que está procurando...">
-                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {% include 'partials/menu.html' %}
+    {% include 'partials/_menu.html' %}
 
     <!-- ##### Best Receipe Area Start ##### -->
     <section class="best-receipe-area">
@@ -36,9 +21,13 @@
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-best-receipe-area mb-30">
                         {% if receita.foto_receita == '' %}
-                            <img src="{% static 'img/bg-img/foto_receita.png' %}" alt="">
+                            <a href="{% url 'receita' receita.id %}">
+                                <img src="{% static 'img/bg-img/foto_receita.png' %}" alt="">
+                            </a>
                         {% else %}
-                            <img src="media/{{receita.foto_receita}}" alt="">
+                            <a href="{% url 'receita' receita.id %}">
+                                <img src="media/{{receita.foto_receita}}" alt="">
+                            </a>
                         {% endif %}
                         <div class="receipe-content">
                             <a href="{% url 'receita' receita.id %}">
@@ -51,5 +40,5 @@
             </div>
         </div>
     </section>
-    {% include 'partials/footer.html' %}
+    {% include 'partials/_footer.html' %}
 {% endblock %}
